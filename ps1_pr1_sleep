@@ -1,0 +1,15 @@
+//Program prints “SLEEP!” made out of individual line of the word. 
+//Each line of text terminates in a “\n” escape sequence then program ends
+#include <iostream>
+#include <string>
+
+int main()
+{
+std::cout << "SSSS L    EEEE EEEE PPPP ! !\n";
+std::cout << "S    L    E    E    P  P ! !\n";
+std::cout << "SSSS L    EEEE EEEE PPPP ! !\n";
+std::cout << "   S L    E    E    P\n";
+std::cout << "SSSS LLLL EEEE EEEE P    ! !\n";
+return 0;
+}
+
