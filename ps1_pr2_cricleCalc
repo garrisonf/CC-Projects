@@ -1,0 +1,14 @@
+// Program inputs the radius of a circle in inches and then computes the area and circumference. 
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int radius; //Radius variable is declared in preparation for user input for area and circumference equations 
+    float pi = 3.14159; //Is declared as a float due to it containing a decimal
+    std::cout << "Enter the radius (in inches): \n"; //Prompts the user for the radius of the circle to be inputted into the area and circumference equations. 
+    std::cin >> radius; //Stores the response as the radius variable
+    std::cout << "Area of a circle with this radius = " << pi * radius * radius << " square inches \n"; //Inputs the radius into area equation and relays answer back to user (radius is multiplied twice to substitute lack of exponent symbol)
+    std::cout << "Circumference of a circle with this radius = " << 2 * pi * radius << " inches \n";  //Takes value for radius and inputs the value of the radius into circumference equation and relays answer back to user
+    return 0; //Ends program
+}
