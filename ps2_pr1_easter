@@ -3,9 +3,11 @@ using namespace std;
 int main() {
     int year,date,month,a,b,c,d,e,f,g,h,i,j,k,l,m,p;
 
+// Prompts user for the year and saves input as a variable 'year'
     cout << "What's the year: " << endl;
     cin >> year;
 
+// Takes variable through equation
     a = year % 19;
     b = year / 100;
     c = year % 100;
@@ -17,10 +19,10 @@ int main() {
     i = c / 4;
     j = c % 4;
     k = (32 + (2 * e) + (2 * i) - h - j) % 7;
-    m = (a + (11 * h) + (22 * k) ) / 451;
-    month = ( h + k - (7 * m) + 114 ) / 31;
+    l = (a + (11 * h) + (22 * k) ) / 451;
+    month = ( h + k - (7 * m) + 114 ) / 31; // This equation is the last to determine month
     p = ( h + k - (7 * m) + 114 ) % 31;
-    date = p + 1;
+    date = p + 1; // This equation is the last to determine date
 
 // The inclusion of "Easter Month is" was to insure aesthetic similarity to the example given
     if (month == 1)
@@ -48,6 +50,7 @@ int main() {
     else if (month == 12)
         cout << "Easter Month is December" << endl;
 
+// Prints easter date using the date variable
     cout << "Easter Date " << date << endl;
 
     return 0;
