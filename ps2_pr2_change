@@ -1,0 +1,41 @@
+// Project 2: Purchase and Change
+// Program prompts the user for a cash value and an amount of purchases made against that amount.
+// Then the program determines the change using US currency denominations.
+
+#include <iostream>
+using namespace std;
+int main() {
+    int val,
+        pur,
+        rem;
+
+    cout << "Enter a value: \n";
+        cin >> val;
+
+    cout << "Enter an amount of purchases made against this amount: \n";
+        cin >> pur;
+
+    rem = val - pur;
+
+    while (rem
+
+
+    cout << "The remaining change is:" << rem << endl;
+
+    "Twenty US Dollar Bills: "
+"Ten US Dollar Bills: "
+"Five US Dollar Bills: "
+"One US Dollar Bills: "
+"Fifty US Cents Coins: "
+"Twenty-Five US Cents Coins: "
+"Ten US Cents Coins: "
+"Five US Cents Coins: "
+"One US Cent Coins: ";
+
+cout << "Continue(y/n)?";
+
+//Use integer arithmetic to ensure that the calculations are accurate.
+// The % (modulus operator) computes remainders but requires two integer operands.
+
+    return 0;
+}
