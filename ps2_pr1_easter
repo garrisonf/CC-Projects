@@ -1,27 +1,54 @@
-// Program prompts the user for the current year and then calculates the date of Easter.
 #include <iostream>
-#include <string>
+using namespace std;
+int main() {
+    int year,date,month,a,b,c,d,e,f,g,h,i,j,k,l,m,p;
 
-int main()
-{
-int year, a, b, c, d, e, f, g, h, i, j, k, m, p;
-std::cout << "What's the year: \n";
-std::cin >> year;
-a = year % 19;
-b = year / 100;
-c = year % 100;
-d = b / 4;
-e = b % 4;
-f = (b + 8) / 25;
-g = (b - f + 1) / 3;
-h = ((19 * a) + b - d - g + 15) % 30;
-i = c / 4;
-j = c % 4;
-k = (32 + (2 * e) + (2 * i) - h - j) % 7;
-m = (a + (11 * h) + (22 * k) ) / 451;
-std::cout << "Easter Month is " << ( h + k - (7 * m) + 114 ) / 31 << std::endl;
-p = ( h + k - (7 * m) + 114 ) % 31;
-std::cout << "Easter Date " << p + 1 << std::endl;
-return 0;
+    cout << "What's the year: " << endl;
+    cin >> year;
+
+    a = year % 19;
+    b = year / 100;
+    c = year % 100;
+    d = b / 4;
+    e = b % 4;
+    f = (b + 8) / 25;
+    g = (b - f + 1) / 3;
+    h = ((19 * a) + b - d - g + 15) % 30;
+    i = c / 4;
+    j = c % 4;
+    k = (32 + (2 * e) + (2 * i) - h - j) % 7;
+    m = (a + (11 * h) + (22 * k) ) / 451;
+    month = ( h + k - (7 * m) + 114 ) / 31;
+    p = ( h + k - (7 * m) + 114 ) % 31;
+    date = p + 1;
+
+// The inclusion of "Easter Month is" was to insure aesthetic similarity to the example given
+    if (month == 1)
+        cout << "Easter Month is January" << endl;
+    else if (month == 2)
+        cout << "Easter Month is February" << endl;
+    if (month == 3)
+        cout << "Easter Month is March" << endl;
+    else if (month == 4)
+        cout << "Easter Month is April" << endl;
+    if (month == 5)
+        cout << "Easter Month is May" << endl;
+    else if (month == 6)
+        cout << "Easter Month is June" << endl;
+    if (month == 7)
+        cout << "Easter Month is July" << endl;
+    else if (month == 8)
+        cout << "Easter Month is August" << endl;
+    if (month == 9)
+        cout << "Easter Month is September" << endl;
+    else if (month == 10)
+        cout << "Easter Month is October" << endl;
+    if (month == 11)
+        cout << "Easter Month is November" << endl;
+    else if (month == 12)
+        cout << "Easter Month is December" << endl;
+
+    cout << "Easter Date " << date << endl;
+
+    return 0;
 }
-//array or if else statement or switch for number to month calc
