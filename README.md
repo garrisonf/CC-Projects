@@ -1,3 +1,3 @@
-CS52
-Garrison Finley 
-2016-2017
+CS52  
+Garrison Finley  
+2016-2017  
