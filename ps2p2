@@ -1,0 +1,70 @@
+// Program prompts the user for a cash value and an amount for purchases made against that initial value.
+//The program then determines the change using US paper and coin currency denominations:
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	float initialv, purchasev, changev;
+	int change, twenties, tens, fives, ones, halfDollars, quarters, dimes, nickels, pennies;
+	char cont = 'y';
+    
+	//Code block is always on until it’s turned off with ‘n’.
+while (cont == 'y'){    
+	
+// Prompts the user for a cash value.
+cout << "Enter a value: \n";
+	cin  >> initialv;
+    
+// Prompts the user for purchases made against that initial value.
+	cout << "Enter an amount of purchases made against this amount: \n";
+	cin >> purchasev;
+    
+// Computes the remaining change by subtracting the purchase amount from the initial change
+	changev = initialv - purchasev;
+	cout << "The remaining change is: " << changev << endl;
+
+	change = changev * 100;
+    
+	twenties = change / 2500;
+	change = change % 2500;
+    
+	tens = change / 1000;
+	change = change % 1000;
+    
+	fives = change / 500;
+	change = change % 500;
+    
+	ones = change / 100;
+	change = change % 100;
+    
+	halfDollars = change / 50;
+	change = change % 50;
+    
+	quarters = change / 25;
+	change = change % 25;
+    
+	dimes = change / 10;
+	change = change % 10;
+    
+	nickels = change / 5;
+	pennies = change % 5;
+
+	cout << "Twenty US Dollar Bills: " << twenties << endl; //  display twenties
+	cout << "Ten US Dollar Bills: " << tens << endl; // displays tens
+	cout << "Five US Dollar Bills: " << fives << endl; // displays fives
+	cout << "One US Dollar Bills: " << ones << endl; // displays ones
+	cout << "Fifty US Cents Coins: " << halfDollars << endl; // displays halfDollars
+	cout << "Twenty-Five US Cents Coins: " << quarters << endl; // displays quarters
+	cout << "Ten US Cents Coins: " << dimes << endl; // displays dimes
+	cout << "Five US Cents Coins: " << nickels << endl; // displays nickels
+	cout << "One US Cent Coins: " << pennies << endl; // displays pennies
+    
+// Prompts user input to continue or end program
+	cout << "Continue(y/n)? \n";
+	cin >> cont;	
+}
+return (0);
+}
