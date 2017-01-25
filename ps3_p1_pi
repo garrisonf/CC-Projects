@@ -1,0 +1,31 @@
+//Program takes in user input and approximates the value of π using the Gregory-Leibniz formula
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+    char cont = 'y'; // Sets while loop condition
+    while (cont == 'y') {
+        int num, n;
+        double result=0, val;
+        cout << "*Pi Calculator*\n";
+        cout << "Input desired number of iterations: \n";
+        cin >> num;
+
+        for(n=0; n<num; n++){
+            val = pow (1,(double)n) / (double)(2*n+1);
+
+            if (n%2==0){
+                result += val;
+            }
+            else{
+                result -= val;
+            }
+        }
+        result *= 4;
+        cout << "Pi in " << num  << " iterations is " << result << endl;
+        cout << "Try again? [Y/N]: \n";
+        cin >> cont;
+    }
+    return 0;
+}
