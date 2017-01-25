@@ -1,0 +1,109 @@
+// Program takes user input regarding garment type, waist, height, and arm length.
+// the program then determines how much cloth in square inches is needed to make the user specified garment.
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Pants
+const double PANTS_WAIST_FACTOR = 2 + 1.0/2;
+const double PANTS_HEIGHT_FACTOR = 1.0/2;
+const double PANTS_PLEAT_FACTOR = 1.0/10;
+const double PANTS_BAGGY_FACTOR = 0.1;
+//Shirts
+const double SHIRTS_WAIST_FACTOR = 2.375;
+const double SHIRTS_HEIGHT_FACTOR = 0.44;
+const double SHIRTS_LSLEEVE_FACTOR = 2.8;
+
+//Shorts
+const double SHORTS_WAIST_FACTOR = 1.3;
+const double SHORTS_HEIGHT_FACTOR = 0.25;
+const double SHORTS_POCKET_FACTOR = 0.15 ;
+
+int main() {
+
+    char cont = 'y'; // Sets while loop condition
+    while (cont == 'y') {
+        //Fabric Area
+        double area=0;
+        //Waist
+        double waistSize=0;
+        //Height
+        double heightSize=0;
+        //Arm Length
+        double armLength=0;
+        string gtype, pleat, baggy, lsleeves, pocket;
+        cout << "Tailor Fabric Calculator: \n";
+
+        cout << "Whaddya want? [p]ants or [s]hirts or shor[t]s: \n";
+        cin >> gtype;
+
+        if (gtype == "p" || gtype == "P") { // Switch insures that response isn't case sensitive
+            cout << "Gimme your waist size in inches: \n"; // Prompts user for waist size stored in float waistSize
+            cin >> waistSize;
+            area = area + (waistSize * PANTS_WAIST_FACTOR); // Equation for area using const double outside main
+
+            cout << "Gimme your height size in inches: \n"; // Prompts user for height size stored in float heightSize
+            cin >> heightSize;
+            area = area + (heightSize * PANTS_HEIGHT_FACTOR);
+
+            cout << "Pleaded front? [Y/N]: \n";
+            cin >> pleat;
+
+            if (pleat == "y" || pleat == "Y")
+                area = area + (waistSize * PANTS_PLEAT_FACTOR);
+
+            cout << "Baggy Look? [Y/N]: \n";
+            cin >> baggy;
+
+            if (baggy == "y" || baggy == "Y")
+                area = area + (area * PANTS_BAGGY_FACTOR);
+
+            cout << "For your pants, you'll need " << area << " square inches of fabric!\n";
+            cout << "Try again? [Y/N]: \n";
+            cin >> cont; // stored in char cont to be checked by the while loop
+        }
+
+        if (gtype == "s" || gtype == "S") {
+            cout << "Gimme your waist size in inches: \n";
+            cin >> waistSize;
+            area = area + (waistSize * SHIRTS_WAIST_FACTOR);
+
+            cout << "Gimme your height size in inches: \n";
+            cin >> heightSize;
+            area = area + (heightSize * SHIRTS_HEIGHT_FACTOR);
+
+            cout << "Long Sleeves? [Y/N]: \n";
+            cin >> lsleeves;
+
+            if (lsleeves == "y" || lsleeves == "Y") // Long sleeves requires an additional prompt for arm length
+                cout << "Gimme your arms length in inches: \n";
+            cin >> armLength;
+            area = area + (armLength * SHIRTS_LSLEEVE_FACTOR);
+
+            cout << "For your shirts, you'll need " << area << " square inches of fabric!\n";
+            cout << "Try again? [Y/N]: \n";
+            cin >> cont;
+        }
+
+        if (gtype == "t" || gtype == "T") {
+
+            cout << "Gimme your waist size in inches: \n";
+            cin >> waistSize;
+            area = area + (waistSize * SHORTS_WAIST_FACTOR);
+
+            cout << "Gimme your height size in inches: \n";
+            cin >> heightSize;
+            area = area + (heightSize * SHORTS_HEIGHT_FACTOR);
+
+            cout << "Pockets? [Y/N]: \n";
+            cin >> pocket;
+
+            if (pocket == "y" || pocket == "Y")
+                area = area + (area * SHORTS_POCKET_FACTOR);
+
+            cout << "For your shorts, you'll need " << area << " square inches of fabric!\n";
+            cout << "Try again? [Y/N]: \n";
+            cin >> cont;
+        }
+    }
+}
